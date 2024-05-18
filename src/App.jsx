@@ -36,7 +36,6 @@ function App() {
       console.log("speculation rules api is not supporting");
     }
   });
-  console.log(import.meta.env.VITE_API_KEY);
   return (
     <HashRouter>
       <Routes>
