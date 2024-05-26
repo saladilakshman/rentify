@@ -1,8 +1,14 @@
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import { rentals } from "../utils/jobs";
+import { Icon } from "leaflet";
 import "leaflet/dist/leaflet.css";
+import markerpng from "../assets/house.png";
 // eslint-disable-next-line react/prop-types
 export const MapBox = ({ location }) => {
+  const icon = new Icon({
+    iconUrl: markerpng,
+    iconSize: [35, 35],
+  });
   return (
     <>
       <MapContainer
@@ -20,7 +26,7 @@ export const MapBox = ({ location }) => {
             rental.location.longitude,
           ];
           return (
-            <Marker position={position} key={index}>
+            <Marker position={position} key={index} icon={icon}>
               <FlyToLocation location={location} />
               <Popup>
                 <span>{rental.propertyType}</span>
