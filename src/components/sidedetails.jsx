@@ -9,37 +9,19 @@ import {
   CardMedia,
   CardActionArea,
   Chip,
-  Paper,
-  IconButton,
-  InputBase,
-  InputAdornment,
 } from "@mui/material";
 import { rentals } from "../utils/jobs";
 import * as Colors from "@mui/material/colors";
 import { Bed, ShowerHead, Users } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { styles } from "../styles/style";
-import SearchIcon from "@mui/icons-material/Search";
+
 //eslint-disable-next-line react/prop-types
 export const Sidedetails = ({ move }) => {
   const navigate = useNavigate();
   return (
     <>
       <Box component="div" sx={styles.sidepagestyles.div}>
-        <Paper sx={styles.sidepagestyles.textInput} elevation={4}>
-          <InputBase
-            placeholder="Search city.."
-            sx={styles.sidepagestyles.textField}
-            inputMode="search"
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton>
-                  <SearchIcon />
-                </IconButton>
-              </InputAdornment>
-            }
-          />
-        </Paper>
         <Box sx={styles.sidepagestyles.grid}>
           {rentals.map((rental, index) => {
             const {
